@@ -165,5 +165,6 @@
     <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:natives-linux:2.9.1" level="project" />
     <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:natives-osx:2.9.1" level="project" />
     <orderEntry type="library" name="YukariLib-1.7.10-1.1.0-dev" level="application" />
+    <orderEntry type="library" name="YukariLib-1.7.10-1.1.0-dev (2)" level="application" />
   </component>
 </module>
