@@ -2,21 +2,21 @@ package stellamagicamod.core.Energy
 
 import net.minecraft.nbt.NBTTagCompound
 import stellamagicamod.core.Energy.APSV.*
+import stellamagicamod.core.Energy.EnergyGroup.*
 
 /**
- * # 日本語
  * このmodで追加される機械の段階を管理するEnumです。
- * @property StellaValorem 段階における魔力保持量[APSV]です。原則、各機械の電圧はその機械の段階によって決定されます。
+ * @property StellaValorem 段階における魔力保持量[APSV]です
  */
 
-enum class RitualTier(val StellaValorem: APSV) {
-    NoTier(ZeroSV),
-    Tier1(Mercuries),
-    Tier2(Tellus),
-    Tier3(Jupiter),
-    Tier4(Uranus),
-    Tier5(Pluto),
-    Tier6(Luna);
+enum class RitualTier(val StellaValorem: APSV, val group: EnergyGroup) {
+    NoTier(ZeroSV, NonGroup),
+    Tier1(Mercuries, Mer),
+    Tier2(Tellus, Tel),
+    Tier3(Jupiter, Jup),
+    Tier4(Uranus, Ura),
+    Tier5(Pluto, Plu),
+    Tier6(Luna, Lun);
 
     fun writeToNBT(tagCompound: NBTTagCompound): NBTTagCompound {
         tagCompound.setInteger(TIER, ordinal)
@@ -33,10 +33,6 @@ enum class RitualTier(val StellaValorem: APSV) {
          * Tierの値から、Enumを返します。
          * @param tier 機械のTierです。
          * @return 引数[tier]に対応するEnumです。
-         *
-         * # English
-         * @param tier the tier of machine
-         * @return Enum of [tier]
          */
         fun getFromTier(tier: Int): RitualTier {
             return when (tier) {

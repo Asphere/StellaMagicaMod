@@ -3,6 +3,7 @@ package stellamagicamod.core;
 import c6h2cl2.YukariLib.Util.RegisterHandler
 import cpw.mods.fml.common.Mod
 import cpw.mods.fml.common.ModMetadata
+import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.event.FMLPreInitializationEvent
 
 @Mod(modid = StellaMagicaModCore.MOD_ID, useMetadata = true, dependencies = "required-after:Forge@[10.13.4.1558,);required-after:YukariLib")
@@ -17,6 +18,21 @@ class StellaMagicaModCore {
     @Mod.EventHandler
     fun preinit(event: FMLPreInitializationEvent){
         RegisterHandler().build(SMMRegistry).handle()
+    }
+
+    @Mod.Instance(MOD_ID)
+    val INSTANCE: StellaMagicaModCore
+
+    @Mod.EventHandler
+    @SuppressWarnings("unused")
+    fun init(event:FMLInitializationEvent) {
+        SMMRegistry.INSTANCE.handleInit()
+    }
+
+    @Mod.EventHandler
+    @SuppressWarnings("unused")
+    fun init(event:FMLPreInitializationEvent) {
+        SMMRegistry.INSTANCE.handleInit()
     }
 
     fun loadMeta() {
