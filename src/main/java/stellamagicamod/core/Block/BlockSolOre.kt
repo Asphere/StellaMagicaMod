@@ -13,7 +13,7 @@ import stellamagicamod.core.StellaMagicaModCore
 
 class BlockSolOre : Block(Material.iron){
     init{
-        setBlockName("stellamagica:customore.0")
+        setBlockName("stellamagica.customore.0")
         textureName = "${StellaMagicaModCore.MOD_ID}:sol_ore"
         setCreativeTab(SMMRegistry.tabStellaMagica_blocks)
         stepSound = soundTypeStone

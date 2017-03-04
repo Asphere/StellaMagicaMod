@@ -6,7 +6,7 @@ import cpw.mods.fml.common.ModMetadata
 import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.event.FMLPreInitializationEvent
 
-@Mod(modid = StellaMagicaModCore.MOD_ID, useMetadata = true, dependencies = "required-after:Forge@[10.13.4.1558,);required-after:YukariLib")
+@Mod(modid = StellaMagicaModCore.MOD_ID, name = StellaMagicaModCore.MOD_NAME, useMetadata = true, dependencies = "required-after:Forge@[10.13.4.1558,);required-after:YukariLib")
 class StellaMagicaModCore {
     companion object {
         const val MOD_ID = "StellaMagicaMod"
@@ -14,25 +14,19 @@ class StellaMagicaModCore {
         const val MOD_VERSION = "1.0.0"
         @Mod.Metadata
         var meta: ModMetadata? = null
-}
+        @Mod.Instance(MOD_ID)
+        var INSTANCE: StellaMagicaModCore? = null
+    }
+
     @Mod.EventHandler
-    fun preinit(event: FMLPreInitializationEvent){
+    fun preinit(event: FMLPreInitializationEvent) {
         RegisterHandler().build(SMMRegistry).handle()
-    }
-
-    @Mod.Instance(MOD_ID)
-    val INSTANCE: StellaMagicaModCore
-
-    @Mod.EventHandler
-    @SuppressWarnings("unused")
-    fun init(event:FMLInitializationEvent) {
-        SMMRegistry.INSTANCE.handleInit()
+        SMMRegistry.handleInit()
     }
 
     @Mod.EventHandler
-    @SuppressWarnings("unused")
-    fun init(event:FMLPreInitializationEvent) {
-        SMMRegistry.INSTANCE.handleInit()
+    fun init(event: FMLInitializationEvent) {
+        SMMRegistry.handleInit()
     }
 
     fun loadMeta() {
