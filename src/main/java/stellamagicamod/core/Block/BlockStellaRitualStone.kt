@@ -16,7 +16,7 @@ import c6h2cl2.YukariLib.Block.BlockWithTileEntity
 
 class BlockStellaRitualStone : Block(Material.iron){
     init{
-        setBlockName("stellamagica:stella_ritual_stone")
+        setBlockName("stellamagica.stella_ritual_stone")
         textureName = "${StellaMagicaModCore.MOD_ID}:stella_ritual_stone_side"
         setCreativeTab(SMMRegistry.tabStellaMagica_blocks)
         stepSound = soundTypeMetal

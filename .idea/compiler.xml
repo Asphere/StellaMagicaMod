@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src_api" target="1.8" />
-      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src_main" target="1.8" />
-      <module name="forge-1.7.10-10.13.4.1614-1.7.10-src_test" target="1.8" />
+      <module name="StellaMagicaMod_api" target="1.8" />
+      <module name="StellaMagicaMod_main" target="1.8" />
+      <module name="StellaMagicaMod_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
